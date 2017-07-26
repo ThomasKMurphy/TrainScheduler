@@ -1,0 +1,12 @@
+.jumbotron {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: black;
+  background: lightgray;
+  border: 5px solid black;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.current-time {
+}
