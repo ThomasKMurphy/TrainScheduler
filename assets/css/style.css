@@ -17,6 +17,10 @@ body {
   color: #74b0bb;
 }
 
+.panel-title {
+  color: black;
+}
+
 #heading {
   background: #c6ca52;
 }
@@ -37,8 +41,4 @@ body {
   border-color: #03414e;;
   box-sizing: border-box;
   margin: 10px;
-}
-
-.panel-title {
-  color: black;
 }

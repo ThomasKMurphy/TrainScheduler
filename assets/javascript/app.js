@@ -43,9 +43,6 @@ $('#add-train-btn').on('click', function (event) {
   console.log(newTrain.first)
   console.log(newTrain.frequency)
 
-  // Alert
-  alert('Train successfully added')
-
   // Clears all of the text-boxes
   $('#train-name-input').val('')
   $('#destination-input').val('')
@@ -62,12 +59,27 @@ database.ref().on('child_added', function (childSnapshot, prevChildKey) {
   var trainFirst = childSnapshot.val().first
   var trainFrequency = childSnapshot.val().frequency
 
+  var trainFirstConverted = moment(trainFirst, 'hh:mm').subtract(1, 'years')
+  console.log(trainFirstConverted)
+  var currentTime = moment()
+  console.log('Current Time: ' + moment(currentTime).format('hh:mm'))
+  var diffTime = moment().diff(moment(trainFirstConverted), 'minutes')
+  console.log('Difference In Time: ' + diffTime)
+  var tRemainder = diffTime % trainFrequency
+  console.log(tRemainder)
+  var tMinutesTillTrain = trainFrequency - tRemainder
+  console.log('Minutes Until Train: ' + tMinutesTillTrain)
+  var nextTrain = moment().add(tMinutesTillTrain, 'minutes')
+  console.log('Arrival Time: ' + moment(nextTrain).format('hh:mm'))
+
   // Train Info
   console.log(trainName)
   console.log(trainDestination)
   console.log(trainFirst)
   console.log(trainFrequency)
+  console.log(nextTrain)
+  console.log(tMinutesTillTrain)
 
   // Add each train's data into the table
-  $('#schedule-table > tbody').append('<tr><td>' + trainName + '</td><td>' + trainDestination + '</td><td>' + trainFrequency + '</td></tr>')
+  $('#schedule-table > tbody').append('<tr><td>' + trainName + '</td><td>' + trainDestination + '</td><td>' + trainFrequency + '</td><td>' + nextTrain + '</td><td>' + tMinutesTillTrain + '</td></tr>')
 })
