@@ -34,11 +34,6 @@ $('#add-train-btn').on('click', function (event) {
 
   database.ref().push(newTrain)
 
-  console.log(newTrain.name)
-  console.log(newTrain.destination)
-  console.log(newTrain.first)
-  console.log(newTrain.frequency)
-
   $('#train-name-input').val('')
   $('#destination-input').val('')
   $('#first-train-input').val('')
@@ -66,12 +61,12 @@ database.ref().on('child_added', function (childSnapshot, prevChildKey) {
   var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('hh:mm')
   console.log('Arrival Time: ' + nextTrain)
 
-  console.log(trainName)
-  console.log(trainDestination)
-  console.log(trainFirst)
-  console.log(trainFrequency)
-  console.log(nextTrain)
-  console.log(tMinutesTillTrain)
+  console.log('Train Name: ' + trainName)
+  console.log('Destination: ' + trainDestination)
+  console.log('First Train Time: ' + trainFirst)
+  console.log('Train Frequency: ' + trainFrequency + ' min')
+  console.log('Next Arrival: ' + nextTrain)
+  console.log('Minutes Away: ' + tMinutesTillTrain)
 
   $('#schedule-table > tbody').append('<tr><td>' + trainName + '</td><td>' + trainDestination + '</td><td>' + trainFrequency + '</td><td>' + nextTrain + '</td><td>' + tMinutesTillTrain + '</td></tr>')
 })
