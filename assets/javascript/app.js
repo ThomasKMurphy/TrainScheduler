@@ -64,7 +64,7 @@ database.ref().on('child_added', function (childSnapshot, prevChildKey) {
   var tMinutesTillTrain = trainFrequency - tRemainder
   console.log('Minutes Until Train: ' + tMinutesTillTrain)
   var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('hh:mm')
-  console.log('Arrival Time: ' + moment(nextTrain).format('hh:mm'))
+  console.log('Arrival Time: ' + nextTrain)
 
   console.log(trainName)
   console.log(trainDestination)
