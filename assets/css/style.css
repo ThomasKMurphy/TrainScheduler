@@ -1,6 +1,6 @@
 body { 
   background-color: #e4634d;
- }
+}
 
 .jumbotron {
   text-align: center;
@@ -32,6 +32,9 @@ body {
   border-color: #03414e;
   box-sizing: border-box;
   margin: 10px;
+  height: 300px;
+  width: 70%;
+  float: left;
 }
 
 #add-train {
@@ -41,5 +44,7 @@ body {
   border-color: #03414e;;
   box-sizing: border-box;
   margin: 10px;
-  width: 40%;
+  width: 25%;
+  float: right;
 }
+
