@@ -13,11 +13,11 @@ firebase.initializeApp(config)
 
 var database = firebase.database()
 
-setInterval(function () {
+setInterval(function() {
   $('.current-time').text(moment().format('dddd, MMMM Do, kk:mm:ss'))
 }, 1000)
 
-$('#add-train-btn').on('click', function (event) {
+$('#add-train-btn').on('click', function(event) {
   event.preventDefault()
 
   var trainName = $('#train-name-input').val().trim()
@@ -40,7 +40,7 @@ $('#add-train-btn').on('click', function (event) {
   $('#frequency-input').val('')
 })
 
-database.ref().on('child_added', function (childSnapshot, prevChildKey) {
+database.ref().on('child_added', function(childSnapshot, prevChildKey) {
   console.log(childSnapshot.val())
 
   var trainName = childSnapshot.val().name

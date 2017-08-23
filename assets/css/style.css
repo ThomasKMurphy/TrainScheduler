@@ -1,4 +1,4 @@
-body { 
+body {
   background-color: #e4634d;
 }
 
@@ -38,9 +38,9 @@ body {
   color: black;
   background: #f4ebdc;
   border: 3px solid;
-  border-color: #03414e;;
+  border-color: #03414e;
+  ;
   box-sizing: border-box;
   margin: 10px;
   width: 35%;
 }
-
